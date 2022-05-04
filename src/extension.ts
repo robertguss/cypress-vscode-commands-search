@@ -4,7 +4,7 @@ const open = require("open");
 
 export function activate(context: ExtensionContext): void {
   context.subscriptions.push(
-    commands.registerCommand("cypress-docs.commands.search", () => {
+    commands.registerCommand("cypress-command-docs.commands.search", () => {
       searchSpecific();
     })
   );

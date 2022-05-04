@@ -1,6 +1,6 @@
 {
-  "name": "cypress-docs",
-  "displayName": "Cypress Docs",
+  "name": "cypress-command-docs",
+  "displayName": "Cypress Command Docs",
   "description": "Search the Cypress docs for a specific command",
   "version": "0.0.1",
   "license": "MIT",
@@ -26,19 +26,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:cypress-docs.commands.search"
+    "onCommand:cypress-command-docs.commands.search"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "cypress-docs.commands.search",
+        "command": "cypress-command-docs.commands.search",
         "title": "Search the Cypress docs for a specific command"
       }
     ],
     "keybindings": [
       {
-        "command": "cypress-docs.commands.search",
+        "command": "cypress-command-docs.commands.search",
         "key": "ctrl+h",
         "mac": "ctrl+h",
         "when": "editorTextFocus"
