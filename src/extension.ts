@@ -1,27 +1,64 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from "vscode";
+import {
+  window,
+  workspace,
+  commands,
+  ExtensionContext,
+  TextEditor,
+  InputBoxOptions,
+} from "vscode";
+
+const open = require("open");
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "cypress-docs" is now active!');
-
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  let disposable = vscode.commands.registerCommand(
-    "cypress-docs.helloWorld",
-    () => {
-      // The code you place here will be executed every time your command is executed
-      // Display a message box to the user
-      vscode.window.showInformationMessage("Cypress Docs");
-    }
+export function activate(context: ExtensionContext): void {
+  context.subscriptions.push(
+    commands.registerCommand("cypress-docs.commands.search", () => {
+      searchSpecific();
+    })
   );
+}
 
-  context.subscriptions.push(disposable);
+/**
+ * Search the Cypress documentation for a specific command
+ */
+async function searchSpecific() {
+  const editor = getEditor() as TextEditor;
+  const command = getSelectedText(editor);
+
+  await open(`https://docs.cypress.io/api/commands/${command}`);
+}
+
+/**
+ * Get vscode active editor
+ *
+ * @return {TextEditor}
+ */
+function getEditor(): TextEditor | undefined {
+  const editor = window.activeTextEditor;
+  if (!editor) {
+    return;
+  }
+
+  return editor;
+}
+
+/**
+ * Get selected text by selection or by cursor position
+ *
+ * @param {TextEditor} active editor
+ * @return {string}
+ */
+function getSelectedText(editor: TextEditor): string {
+  const selection = editor.selection;
+  let text = editor.document.getText(selection);
+
+  if (!text) {
+    const range = editor.document.getWordRangeAtPosition(selection.active);
+    text = editor.document.getText(range);
+  }
+
+  return text;
 }
 
 // this method is called when your extension is deactivated
