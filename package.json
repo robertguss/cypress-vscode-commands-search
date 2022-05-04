@@ -15,8 +15,7 @@
     "vscode": "^1.66.0"
   },
   "bugs": {
-    "url": "https://github.com/cypress-io/cypress-vscode-commands-search/issues",
-    "email": "deerawan@gmail.com"
+    "url": "https://github.com/cypress-io/cypress-vscode-commands-search/issues"
   },
   "homepage": "https://github.com/cypress-io/cypress-vscode-commands-search",
   "repository": {
