@@ -20,16 +20,16 @@
         "command": "cypress-docs.commands.search",
         "title": "Search the Cypress docs for a specific command"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "cypress-docs.commands.search",
+        "key": "ctrl+h",
+        "mac": "ctrl+h",
+        "when": "editorTextFocus"
+      }
     ]
   },
-  "keybindings": [
-    {
-      "command": "cypress-docs.commands.search",
-      "key": "ctrl+h",
-      "mac": "ctrl+h",
-      "when": "editorTextFocus"
-    }
-  ],
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",

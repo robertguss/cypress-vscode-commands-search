@@ -1,16 +1,7 @@
-import {
-  window,
-  workspace,
-  commands,
-  ExtensionContext,
-  TextEditor,
-  InputBoxOptions,
-} from "vscode";
+import { window, commands, ExtensionContext, TextEditor } from "vscode";
 
 const open = require("open");
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext): void {
   context.subscriptions.push(
     commands.registerCommand("cypress-docs.commands.search", () => {
