@@ -15,12 +15,12 @@
     "vscode": "^1.66.0"
   },
   "bugs": {
-    "url": "https://github.com/cypress-io/cypress-vscode-commands-search/issues"
+    "url": "https://github.com/robertguss/cypress-vscode-commands-search/issues"
   },
-  "homepage": "https://github.com/cypress-io/cypress-vscode-commands-search",
+  "homepage": "https://github.com/robertguss/cypress-vscode-commands-search",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cypress-io/cypress-vscode-commands-search"
+    "url": "https://github.com/robertguss/cypress-vscode-commands-search"
   },
   "categories": [
     "Other"
