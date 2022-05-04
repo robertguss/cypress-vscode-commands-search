@@ -4,7 +4,7 @@
   "description": "Search the Cypress docs for a specific command",
   "version": "0.0.1",
   "license": "MIT",
-  "published": "Cypress DX",
+  "publisher": "Cypress DX",
   "keywords": [
     "cypress",
     "docs",
