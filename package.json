@@ -4,6 +4,12 @@
   "description": "Search the Cypress docs for a specific command",
   "version": "0.0.1",
   "license": "MIT",
+  "keywords": [
+    "cypress",
+    "docs",
+    "search"
+  ],
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.66.0"
   },
